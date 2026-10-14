@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitácora de Préstamo Audiovisual</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <!-- Barra lateral -->
+  <aside class="sidebar">
+    <div class="logo">BA</div>
+    <button id="btnSalir" class="btn-salir" title="Salir">⎋</button>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <header class="header">
+      <div>
+        <h1>Bitácora de Préstamo Audiovisual</h1>
+        <p class="subtitulo">Panel de Administración — Escuela Preparatoria Comitán</p>
+      </div>
+      <div class="acciones">
+        <button id="btnNotas" class="btn btn-amarillo">📝 Notas Generales</button>
+        <button id="btnReservar" class="btn btn-oscuro">Reservar +</button>
+      </div>
+    </header>
+
+    <!-- Navegación de semanas -->
+    <section class="nav-semana">
+      <button id="semanaAnterior" class="btn-nav">← Semana anterior</button>
+      <div class="fechas">
+        <strong id="rangoSemana">12 OCT - 16 OCT</strong>
+        <span class="etiqueta">Semana mostrada</span>
+      </div>
+      <button id="semanaSiguiente" class="btn-nav">Semana siguiente →</button>
+    </section>
+
+    <!-- Bloc de notas (oculto por defecto) -->
+    <section id="blocNotas" class="bloc-notas oculto">
+      <div class="bloc-header">
+        <strong>Bloc de Notas del Administrador</strong>
+        <button id="cerrarNotas" class="btn-cerrar">✕</button>
+      </div>
+      <textarea id="notasTexto" placeholder="Ej. El maestro Juan reservó el audiovisual grande para el receso de hoy..."></textarea>
+      <small>*Se guarda automáticamente solo en este equipo.</small>
+    </section>
+
+    <!-- Tabla del horario -->
+    <section class="tabla-wrapper">
+      <table id="tablaHorario" class="tabla-horario">
+        <!-- Se genera con JS -->
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal Login -->
+  <div id="modalLogin" class="modal oculto">
+    <div class="modal-contenido login">
+      <h2>Acceso Admin</h2>
+      <p class="subtitulo">Inicia sesión para gestionar</p>
+      <input type="text" id="usuario" placeholder="Usuario" value="admin" />
+      <div class="campo-pass">
+        <input type="password" id="password" placeholder="Contraseña" />
+        <button id="verPass" class="ojo">👁️</button>
+      </div>
+      <button id="btnEntrar" class="btn btn-azul">Entrar al Sistema</button>
+      <button id="btnVolver" class="btn btn-borde">Volver</button>
+      <p id="errorLogin" class="error oculto">Usuario o contraseña incorrectos</p>
+    </div>
+  </div>
+
+  <!-- Modal Agendar Préstamo -->
+  <div id="modalReservar" class="modal oculto">
+    <div class="modal-contenido reservar">
+      <h2>Agendar Préstamo</h2>
+
+      <label>Fecha</label>
+      <input type="date" id="fechaReserva" />
+
+      <label>Horario</label>
+      <select id="horarioReserva"></select>
+
+      <label>Docente</label>
+      <input type="text" id="docenteReserva" list="listaDocentes" placeholder="Escribe el nombre del docente" />
+      <datalist id="listaDocentes"></datalist>
+
+      <label>Grupo</label>
+      <select id="grupoReserva"></select>
+
+      <label>Aula (Libres)</label>
+      <select id="aulaReserva"></select>
+
+      <label>Notas de la Clase (Opcional)</label>
+      <input type="text" id="notasReserva" placeholder="Ej. Evento especial, falla eléctrica..." />
+
+      <label>Equipo requerido:</label>
+      <div class="equipo">
+        <label><input type="checkbox" value="proyector" /> Proyector</label>
+        <label><input type="checkbox" value="bocina" /> Bocina</label>
+        <label><input type="checkbox" value="laptop" /> Laptop</label>
+        <label><input type="checkbox" value="tv" /> TV</label>
+      </div>
+
+      <div class="botones-modal">
+        <button id="cancelarReserva" class="btn btn-borde">Cancelar</button>
+        <button id="guardarReserva" class="btn btn-azul">Guardar Préstamo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

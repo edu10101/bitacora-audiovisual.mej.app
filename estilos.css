@@ -1,0 +1,93 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
+body { display: flex; background: #f5f6fa; }
+
+.sidebar {
+  width: 70px; background: #1a2233; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; padding: 20px 0;
+  justify-content: space-between;
+}
+.logo {
+  width: 40px; height: 40px; background: #2563eb; color: white;
+  display: grid; place-items: center; border-radius: 8px; font-weight: bold;
+}
+.btn-salir { background: none; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; }
+
+.contenido { flex: 1; padding: 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+h1 { font-size: 22px; color: #1e293b; }
+.subtitulo { color: #64748b; font-size: 13px; }
+
+.btn { padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; }
+.btn-amarillo { background: #fef3c7; color: #92400e; }
+.btn-oscuro { background: #1e293b; color: white; }
+.btn-azul { background: #2563eb; color: white; width: 100%; padding: 12px; margin-top: 8px; }
+.btn-borde { background: white; border: 1px solid #cbd5e1; width: 100%; padding: 12px; margin-top: 8px; }
+
+.nav-semana {
+  display: flex; align-items: center; gap: 16px; background: white;
+  padding: 14px 20px; border-radius: 10px; margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.btn-nav { background: none; border: none; color: #475569; cursor: pointer; font-size: 14px; }
+.fechas { text-align: center; flex: 1; }
+.etiqueta { display: block; color: #2563eb; font-size: 12px; }
+
+.bloc-notas {
+  background: #fffbeb; border: 1px solid #fcd34d;
+  border-radius: 10px; padding: 16px; margin-bottom: 16px;
+}
+.bloc-header { display: flex; justify-content: space-between; margin-bottom: 10px; color: #92400e; }
+.bloc-notas textarea {
+  width: 100%; min-height: 80px; border: 1px solid #fcd34d;
+  border-radius: 8px; padding: 10px; resize: vertical;
+}
+.btn-cerrar { background: none; border: none; cursor: pointer; color: #92400e; }
+
+.tabla-wrapper { background: white; border-radius: 10px; overflow: auto; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.tabla-horario { width: 100%; border-collapse: collapse; min-width: 900px; }
+.tabla-horario th, .tabla-horario td {
+  border: 1px solid #e2e8f0; padding: 8px; vertical-align: top; font-size: 13px;
+}
+.tabla-horario th { background: #f8fafc; padding: 12px; text-align: center; color: #334155; }
+.tabla-horario th.hoy { background: #dbeafe; }
+.hora { text-align: center; color: #334155; font-weight: 500; background: #f8fafc; }
+
+.tarjeta {
+  border-radius: 6px; padding: 8px; margin-bottom: 6px;
+  border-left: 4px solid #2563eb; background: #eff6ff;
+}
+.tarjeta-header { font-weight: 600; font-size: 12px; color: #1e293b; }
+.tarjeta-info { font-size: 12px; color: #475569; margin-top: 2px; }
+.tarjeta-equipo { font-size: 11px; margin-top: 4px; }
+
+.libres {
+  border: 1px dashed #22c55e; color: #16a34a;
+  padding: 6px; border-radius: 6px; font-size: 12px; margin-top: 4px;
+}
+.disponible { color: #cbd5e1; text-align: center; padding: 20px; }
+
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  display: grid; place-items: center; z-index: 100;
+}
+.modal-contenido {
+  background: white; border-radius: 12px; padding: 28px;
+  width: 100%; max-width: 420px;
+}
+.modal-contenido.login { background: #1e293b; color: white; }
+.modal-contenido.login h2 { text-align: center; margin-bottom: 6px; }
+.modal-contenido.login .subtitulo { text-align: center; color: #94a3b8; margin-bottom: 20px; }
+.modal-contenido input, .modal-contenido select {
+  width: 100%; padding: 10px; border-radius: 8px;
+  border: 1px solid #cbd5e1; margin-bottom: 12px;
+}
+.modal-contenido.login input { background: #f1f5f9; border: none; }
+.campo-pass { position: relative; }
+.ojo { position: absolute; right: 10px; top: 10px; background: none; border: none; cursor: pointer; }
+
+.modal-contenido label { font-size: 13px; color: #475569; display: block; margin-bottom: 4px; }
+.equipo { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.botones-modal { display: flex; gap: 10px; }
+
+.oculto { display: none !important; }
+.error { color: #f87171; text-align: center; font-size: 13px; margin-top: 8px; }
